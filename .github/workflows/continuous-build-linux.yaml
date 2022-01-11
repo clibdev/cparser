@@ -11,4 +11,4 @@ jobs:
     container: frolvlad/alpine-glibc
     steps:
       - name: Install build tools
-        run: apt install cmake
+        run: sudo apt install -y cmake
