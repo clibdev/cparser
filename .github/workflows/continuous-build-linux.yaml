@@ -10,5 +10,5 @@ jobs:
     runs-on: ubuntu-latest
     container: frolvlad/alpine-glibc
     steps:
-      - name: Test echo
-        run: echo 'Test'
+      - name: Install build tools
+        run: apt install cmake
