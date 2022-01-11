@@ -10,5 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     container: ubuntu:latest
     steps:
+      - name: Update package lists
+        run: apt update
       - name: Install build tools
         run: apt install -y cmake
