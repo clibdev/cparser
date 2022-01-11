@@ -1,0 +1,14 @@
+name: Continuous Build Linux
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  static-build:
+    runs-on: ubuntu-latest
+    container: frolvlad/alpine-glibc
+    steps:
+      - name: Test echo
+        run: echo 'Test'
