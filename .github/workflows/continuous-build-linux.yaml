@@ -16,7 +16,7 @@ jobs:
 
       - name: Build
         working-directory: ${{github.workspace}}/build
-        run: make
+        run: make -j$(nproc)
 
       - name: Test
         working-directory: ${{github.workspace}}/build
