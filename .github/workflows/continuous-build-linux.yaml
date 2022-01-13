@@ -12,18 +12,18 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Configure CMake
-        run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXE_LINKER_FLAGS="-static"
+        run: cmake -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXE_LINKER_FLAGS="-static"
 
       - name: Build
-        working-directory: ${{github.workspace}}/build
+        working-directory: build
         run: make -j$(nproc)
 
       - name: Test
-        working-directory: ${{github.workspace}}/build
+        working-directory: build
         run: file cparser
 
       - name: Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: ${{github.workspace}}/build/cparser
+          artifacts: build/cparser
           token: ${{secrets.GITHUB_TOKEN}}
