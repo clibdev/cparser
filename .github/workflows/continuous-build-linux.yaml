@@ -21,3 +21,9 @@ jobs:
       - name: Test
         working-directory: ${{github.workspace}}/build
         run: file cparser
+
+      - name: Upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: cparser
+          path: ${{github.workspace}}/build/cparser
