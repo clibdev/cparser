@@ -25,5 +25,6 @@ jobs:
       - name: Release
         uses: ncipollo/release-action@v1
         with:
+          body: cparser ${{github.ref_name}} binaries.
           artifacts: build/cparser
           token: ${{secrets.GITHUB_TOKEN}}
